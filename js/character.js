@@ -32,7 +32,7 @@ class Character extends Observable {
         return this.personaje.getBoundingClientRect().top;
     }
 
-    selectcharacter(id) {
+    selectCharacter(id) {
         var idCharacters = {
             "1": mSantos,
             "2": eRavenna,

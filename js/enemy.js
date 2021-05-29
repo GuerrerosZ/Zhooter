@@ -17,10 +17,6 @@ class Enemy {
 
         this.movDelay = 100; //Milisegundos
 
-        this.xDir = false;
-        this.yDir = false;
-        this.lastMov = false;
-
         alert(`se creo un enemigo ${data.name}`);
     }
 
@@ -28,7 +24,7 @@ class Enemy {
         return this.id;
     }
 
-    selectenemy(id) {
+    selectEnemy(id) {
         var idenemys = {
             "1": zombie,
             "2": esquelo,
