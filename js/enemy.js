@@ -38,7 +38,7 @@ class Enemy {
     }
 
     notify(model) {
-        xCharacter = model.xPos; //Agregar xPos e yPos, agregar metodo notify y extender de Observer al character 
+        xCharacter = model.xPos;
         yCharacter = model.yPos;
     }
 
