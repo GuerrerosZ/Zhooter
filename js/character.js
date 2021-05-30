@@ -12,8 +12,24 @@ class Character {
         this.personaje = document.getElementById('character');
 	}
 
-	disparar(){
-        this.primaryWeapon.disparar();
+	shootRight(){
+        this.primaryWeapon.shootRight();
+    }
+
+    shootLeft(){
+        this.primaryWeapon.shootLeft();
+    }
+
+    shootUp(){
+        this.primaryWeapon.shootUp();
+    }
+
+    shootDown(){
+        this.primaryWeapon.shootDown();
+    }
+
+    getControls(){
+        return this.controls;
     }
 
 	getId(){

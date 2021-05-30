@@ -1,7 +1,8 @@
 class Control{
 	constructor(){
 		this.character = document.getElementById("character");
-		document.addEventListener('keydown', this.move);
+		document.addEventListener('keydown', this.move);	
+		document.addEventListener('keydown', this.shoot);	
 	}
 
 	move(){
@@ -58,6 +59,24 @@ class Control{
 	            character.style.left = "-30px";
 	        }
 		}
+	}
+
+	shoot(){
+		var tecla = event.keyCode;
+		switch (tecla) {
+            case 40: //abajo
+                character.shootDown();
+                break;
+            case 37: //izquierda
+               	character.shootLeft();
+                break;
+            case 38: //arriba
+                character.shootUp();
+                break;
+            case 39: //derecha
+                character.shootRight();
+                break;
+        }
 	}
 
 	

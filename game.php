@@ -12,12 +12,12 @@
 		<img id="character" src="img/sprites/character.png" alt="">
 	</section>
 
-    <script src="js/controls.js"></script>
-    <script src="js/shoot.js"></script>
-    <script src="js/gun.js"></script>
-    <script src="js/character.js"></script>
-    <script src="js/session.js"></script>
-	<script src="js/runGame.js"></script>	
+	<script defer src="js/shoot.js"></script>
+    <script defer src="js/controls.js"></script>
+    <script defer src="js/gun.js"></script>
+    <script defer src="js/character.js"></script>
+    <script defer src="js/session.js"></script>
+	<script defer src="js/runGame.js"></script>	
     
 
 </body>
