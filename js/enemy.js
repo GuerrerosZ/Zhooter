@@ -1,6 +1,6 @@
 class Enemy {
     constructor(id) {
-        var data = this.selectenemy(id);
+        var data = this.selectEnemy(id);
         this.id = id;
         this.name = data.name;
         this.healt = data.healt;
