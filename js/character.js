@@ -38,12 +38,25 @@ class Character extends Observable {
         this.yPos;
     }
 
-    //En el metodo de movimiento hay que agregar this.notify(this);
-
-    disparar() {
-        this.primaryWeapon.disparar();
+    shootRight() {
+        this.primaryWeapon.shootRight();
     }
 
+    shootLeft() {
+        this.primaryWeapon.shootLeft();
+    }
+
+    shootUp() {
+        this.primaryWeapon.shootUp();
+    }
+
+    shootDown() {
+        this.primaryWeapon.shootDown();
+    }
+
+    getControls() {
+        return this.controls;
+    }
     getId() {
         return this.id;
     }

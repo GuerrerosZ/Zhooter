@@ -11,8 +11,20 @@ class LinealShoot extends Shoot{
         super();
     }
 
-    run(){
-        alert("Lineal")
+    right(){
+        alert("derecha");
+    }
+
+    up(){
+        alert("arriba");
+    }
+
+    down(){
+        alert("abajo");
+    }
+
+    left(){
+        alert("izquierda");
     }
 }
 
@@ -21,11 +33,7 @@ class BurstShoot extends Shoot{
         super();
     }
 
-    run(){
-        this.rigth();
-    }
-
-    rigth(){
+    right(){
         var x = character.getX();
         var y = character.getY();
 
@@ -42,6 +50,18 @@ class BurstShoot extends Shoot{
         },100);
     }
 
+    up(){
+        alert("arriba");
+    }
+
+    down(){
+        alert("abajo");
+    }
+
+    left(){
+        alert("izquierda");
+    }
+
     createHorizontalBullet(width,height,xi,xf){
 
 
@@ -52,8 +72,20 @@ class PelletShoot extends Shoot{
     constructor(){
         super();
     }
+    
+    right(){
+        alert("derecha");
+    }
 
-    run(){
-        alert("Perdigones")
+    up(){
+        alert("arriba");
+    }
+
+    down(){
+        alert("abajo");
+    }
+
+    left(){
+        alert("izquierda");
     }
 }

@@ -11,8 +11,20 @@ class Gun {
         this.disparo = shoot;
     }
 
-    disparar(){
-        this.disparo.run();
+    shootRight(){
+        this.disparo.right();
+    }
+
+    shootLeft(){
+        this.disparo.left();
+    }
+
+    shootUp(){
+        this.disparo.up();
+    }
+
+    shootDown(){
+        this.disparo.down();
     }
 
     resetAmmo(){
