@@ -1,16 +1,43 @@
-class Character {
-	constructor(id){
-		var data = this.selectcharacter(id);
-		this.id = id;
-		this.name = data.name;
-		this.healt = data.healt;
-		this.vel = data.vel;
-		this.armor = data.armor;
-		this.primaryWeapon = data.primaryWeapon;
-		this.defaultWeapon = data.defaultWeapon;
+class Observable {
+    constructor() {
+        this.observers = [];
+    }
+
+    // Suscribe una clase notificadora
+    subscribe(c) {
+        this.observers.push(c);
+    }
+
+    // Desuscribe la clase notificadora
+    unsubscribe(c) {
+        this.observers = this.observers.filter(observer => observer instanceof c !== true);
+    }
+
+    // Llama a todos nuestros suscriptores
+    notify(model) {
+        this.observers.forEach(observer => {
+            observer.notify(model);
+        });
+    }
+}
+
+
+class Character extends Observable {
+    constructor(id) {
+        super();
+        var data = this.selectCharacter(id);
+        this.id = id;
+        this.name = data.name;
+        this.healt = data.healt;
+        this.vel = data.vel;
+        this.armor = data.armor;
+        this.primaryWeapon = data.primaryWeapon;
+        this.defaultWeapon = data.defaultWeapon;
         this.controls = new Control();
         this.personaje = document.getElementById('character');
-	}
+        this.xPos;
+        this.yPos;
+    }
 
 	shootRight(){
         this.primaryWeapon.shootRight();
@@ -30,21 +57,20 @@ class Character {
 
     getControls(){
         return this.controls;
+
+    getId() {
+        return this.id;
     }
 
-	getId(){
-		return this.id;
-	}
-
-    getX(){
+    getX() {
         return this.personaje.getBoundingClientRect().left;
     }
 
-    getY(){
+    getY() {
         return this.personaje.getBoundingClientRect().top;
     }
 
-    selectcharacter(id){
+    selectCharacter(id) {
         var idCharacters = {
             "1": mSantos,
             "2": eRavenna,
@@ -59,7 +85,7 @@ class Character {
 //Creacion de Armas
 var ak = new Ak(),
     shotgun = new Shotgun()
-    rifle = new Rifle(),
+rifle = new Rifle(),
     revolver = new Revolver(),
     secondary = new Default();
 
@@ -99,4 +125,3 @@ var gMedina = {
     "primaryWeapon": revolver,
     "defaultWeapon": secondary,
 };
-
