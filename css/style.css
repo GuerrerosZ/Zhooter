@@ -1,0 +1,32 @@
+body {
+    background-color: gray;
+}
+
+#grilla {
+    display: grid;
+    grid-template-areas: "b1" "b2" "b3";
+    grid-template-rows: 40px 40px 40px;
+    grid-template-columns: 100%;
+}
+
+#but1 {
+    grid-area: b1;
+    width: 200px;
+    height: 40px;
+}
+
+#but2 {
+    grid-area: b2;
+    width: 200px;
+    height: 40px;
+}
+
+#but3 {
+    grid-area: b3;
+    width: 200px;
+    height: 40px;
+}
+
+.bColor {
+    background-color: greenyellow;
+}

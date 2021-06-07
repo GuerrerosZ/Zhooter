@@ -22,6 +22,9 @@ class Control{
             case 68: //derecha
                 right();
                 break;
+            case 80: //pausa
+            	pause();
+            	break;
         }
 
        	function up(){
@@ -58,6 +61,10 @@ class Control{
 	        }else{
 	            character.style.left = "-30px";
 	        }
+		}
+		function pause(){
+			window.location.replace("../pause.php" , "PAUSA" , "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
+			//pausar juego, hasta que se cierre la ventana emergente
 		}
 	}
 
