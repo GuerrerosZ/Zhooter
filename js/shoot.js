@@ -14,6 +14,7 @@ class Shoot{
     }
 
     spawn(){
+        alert(enemys);
     	var x = this.getX();
     	var y = this.getY();
     	var bullet = document.createElement('img');

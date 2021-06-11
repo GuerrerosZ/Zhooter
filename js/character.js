@@ -36,6 +36,24 @@ class Character extends Observable {
         this.personaje = document.getElementById('character');
         this.xPos;
         this.yPos;
+        this.statsControl = new StatsControl();
+    }
+
+    setHealt(healt){
+        this.healt = healt;
+        this.statsControl.updateHealt(healt);
+        if (this.healt <= 0) {
+            window.location.replace("gameOver.php");
+        }
+    }
+
+    toDamage(damage){
+        this.setHealt(this.getHealt()-damage);
+        this.statsControl.dropBlood();
+    }
+
+    getHealt(){
+        return this.healt;
     }
 
     shootRight() {

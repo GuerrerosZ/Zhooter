@@ -128,3 +128,29 @@ class EnemyControl{
 		this.setPos(this.getPosX() + x,this.getPosY() + y);
 	}
 }
+
+class StatsControl{
+	constructor(){
+		this.healt = document.createElement('div');
+		this.healt.setAttribute('class','stat');
+		this.healt.innerHTML = 100;	
+		this.stats = document.getElementById('stats')
+	}
+
+	updateHealt(healt){
+		this.healt.innerHTML = "Vida: " + healt + " ♥";
+		this.stats.appendChild(this.healt);
+	}
+
+	dropBlood(){
+		var blood = document.createElement('div');
+		blood.setAttribute('class','blood');
+		this.stats.appendChild(blood);
+		setTimeout(cleanBlood,100);
+		function cleanBlood(){
+			this.stats.removeChild(blood);
+		}
+		var ouch = new Audio('sound/ouch.mp3');
+		ouch.play();
+	}
+}

@@ -6,8 +6,12 @@
 	<title>Zhooter</title>
 	<link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/bullet.css">
+    <link rel="stylesheet" href="css/stats.css">
 </head>
 <body ondragstart="return false" onselectstart="return false">
+	<section id="stats">
+		
+	</section>
 	<section id="escenario" class="escenario">
 		<img id="character" src="img/sprites/character.png" alt="">
 	</section>

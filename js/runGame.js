@@ -1,6 +1,7 @@
 (function(){
 	session = new Session();
 	character = session.getCharacter();
+	character.setHealt(character.getHealt());
 	var enemys = [];
 	for (var i = 0; i < 5; i++) {
 		var enemy = new Enemy(1);

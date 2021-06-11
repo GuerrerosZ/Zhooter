@@ -59,7 +59,7 @@ class Enemy {
     }
 
     atacar(){
-    	//alert('atacando');
+    	character.toDamage(this.danio);
     }
 
     setPos(x,y){
