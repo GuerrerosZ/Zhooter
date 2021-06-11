@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    color: violet;
+    font-size: 100px;
+}
+
+.button {
+    border: solid 1px white;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+#d1 {
+    padding-left: 150px;
+}
+
+#d2 {
+    padding-left: 160px;
+}
+
+#d3 {
+    padding-left: 160px;
+}
+
+#d4 {
+    padding-left: 75px;
+}
+
+#d5 {
+    padding-left: 75px;
+}
+
+#d6 {
+    padding-left: 75px;
+}
+
+#d7 {
+    padding-left: 75px;
+}
