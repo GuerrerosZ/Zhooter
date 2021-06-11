@@ -4,6 +4,25 @@ class Shoot{
     run(){
         alert("disparo");
     }
+
+    getX(){
+    	return character.getX();
+    }
+
+    getY(){
+    	return character.getY();
+    }
+
+    spawn(){
+    	var x = this.getX();
+    	var y = this.getY();
+    	var bullet = document.createElement('img');
+    	bullet.src = 'img/bullets/bullet.png';
+    	bullet.style.top = y + 'px';
+    	bullet.style.left = x + 'px';
+    	document.getElementById('escenario').appendChild(bullet);
+    	return bullet;
+    }
 }
 
 class LinealShoot extends Shoot{
@@ -12,118 +31,137 @@ class LinealShoot extends Shoot{
     }
 
     right(){
-        alert("derecha");
+    	var bullet = super.spawn();
+    	bullet.setAttribute('class','rightBullet');
+    	var interval = setInterval(function(){
+    		var desplazamiento = bullet.x + 10;
+    		bullet.style.left = desplazamiento + 'px';
+    		if (window.innerWidth < bullet.x) {
+		    	clearInterval(interval);
+		    	document.getElementById('escenario').removeChild(bullet);
+		  	}
+    	},10);
     }
 
     up(){
-        alert("arriba");
+        var bullet = super.spawn();
+    	bullet.setAttribute('class','upBullet');
+    	var interval = setInterval(function(){
+    		var desplazamiento = bullet.y - 10;
+    		bullet.style.top = desplazamiento + 'px';
+    		if (0 > bullet.y) {
+		    	clearInterval(interval);
+		    	document.getElementById('escenario').removeChild(bullet);
+		  	}
+    	},10);	
     }
 
     down(){
-        alert("abajo");
+        var bullet = super.spawn();
+    	bullet.setAttribute('class','downBullet');
+    	var interval = setInterval(function(){
+    		var desplazamiento = bullet.y + 10;
+    		bullet.style.top = desplazamiento + 'px';
+    		if (window.innerHeight < bullet.y) {
+		    	clearInterval(interval);
+		    	document.getElementById('escenario').removeChild(bullet);
+		  	}
+    	},10);	
     }
 
     left(){
-        alert("izquierda");
+        var bullet = super.spawn();
+    	bullet.setAttribute('class','leftBullet');
+    	var interval = setInterval(function(){
+    		var desplazamiento = bullet.x - 10;
+    		bullet.style.left = desplazamiento + 'px';
+    		if (0 > bullet.x) {
+		    	clearInterval(interval);
+		    	document.getElementById('escenario').removeChild(bullet);
+		  	}
+    	},10);
     }
 }
 
 class BurstShoot extends Shoot{
     constructor(){
         super();
+        this.linealShoot = new LinealShoot();
     }
 
-    right(){
-        var x = character.getX();
-        var y = character.getY();
-
-        var escenario = document.getElementById('escenario');
-        var bullet = document.createElement('div');
-        bullet.setAttribute('class', 'lineal');
-        bullet.style.width = (escenario.getBoundingClientRect().width - x) + 'px';
-        bullet.style.height = '1px';
-        escenario.appendChild(bullet);
-        bullet.style.left = x + 'px';
-        bullet.style.top = y + 'px';
-        setTimeout(function(){
-            escenario.removeChild(bullet)
-        },100);
+    right(i = 0){
+    	var self = this;
+		var interval = setInterval(function(){
+    		if (i == 4) {
+    			clearInterval(interval);
+    		}
+    		self.linealShoot.right();
+    		i += 1;
+    	},100);
     }
 
-    up(){
-        var x = character.getX();
-        var y = character.getY();
-
-        var escenario = document.getElementById('escenario');
-        var bullet = document.createElement('div');
-        bullet.setAttribute('class', 'lineal');
-        bullet.style.width = '1px';
-        bullet.style.height = y + 'px';
-        escenario.appendChild(bullet);
-        bullet.style.left = x + 'px';
-        bullet.style.top = 0;
-        setTimeout(function(){
-            escenario.removeChild(bullet)
-        },100);
+    up(i = 0){
+       var self = this;
+		var interval = setInterval(function(){
+    		if (i == 4) {
+    			clearInterval(interval);
+    		}
+    		self.linealShoot.up();
+    		i += 1;
+    	},100);
     }
 
-    down(){
-        var x = character.getX();
-        var y = character.getY();
-
-        var escenario = document.getElementById('escenario');
-        var bullet = document.createElement('div');
-        bullet.setAttribute('class', 'lineal');
-        bullet.style.width = '1px';
-        bullet.style.height = (escenario.getBoundingClientRect().height - y) + 'px';
-        escenario.appendChild(bullet);
-        bullet.style.left = x + 'px';
-        bullet.style.top = y + 'px';
-        setTimeout(function(){
-            escenario.removeChild(bullet)
-        },100);
+    down(i = 0){
+        var self = this;
+		var interval = setInterval(function(){
+    		if (i == 4) {
+    			clearInterval(interval);
+    		}
+    		self.linealShoot.down();
+    		i += 1;
+    	},100);
     }
 
-    left(){
-        var x = character.getX();
-        var y = character.getY();
-
-        var escenario = document.getElementById('escenario');
-        var bullet = document.createElement('div');
-        bullet.setAttribute('class', 'lineal');
-        bullet.style.width = x + 'px';
-        bullet.style.height = '1px';
-        escenario.appendChild(bullet);
-        bullet.style.left = 0;
-        bullet.style.top = y + 'px';
-        setTimeout(function(){
-            escenario.removeChild(bullet)
-        },100);
+    left(i = 0){
+        var self = this;
+		var interval = setInterval(function(){
+    		if (i == 4) {
+    			clearInterval(interval);
+    		}
+    		self.linealShoot.left();
+    		i += 1;
+    	},100);
     }
-
-    // createHorizontalBullet(width,height,xi,xf){
-
-    // }
 }
 
 class PelletShoot extends Shoot{
     constructor(){
         super();
+        this.linealShoot = new LinealShoot();
+        this.burstShoot = new BurstShoot();
     }
     
     right(){
-        alert("derecha");
+        this.burstShoot.right();
+        this.linealShoot.up();
+        this.linealShoot.down();
     }
 
     up(){
-        alert("arriba");
+        this.linealShoot.right();
+        this.burstShoot.up();
+        this.linealShoot.left();
     }
 
     down(){
-        alert("abajo");
+        this.linealShoot.right();
+        this.burstShoot.down();
+        this.linealShoot.left();
     }
 
     left(){
-        alert("izquierda");
+        this.linealShoot.up();
+        this.burstShoot.left();
+        this.linealShoot.down();
     }
 }

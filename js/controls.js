@@ -2,7 +2,7 @@ class Control{
 	constructor(){
 		this.character = document.getElementById("character");
 		document.addEventListener('keydown', this.move);	
-		document.addEventListener('keydown', this.shoot);	
+		document.addEventListener('keyup', this.shoot);	
 	}
 
 	move(){

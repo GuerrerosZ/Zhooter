@@ -4,3 +4,30 @@ div.lineal{
 	background: blue;
 	position: absolute;
 }
+
+img.rightBullet{
+	position: absolute;
+	width: 5vw;
+	height: 5vh;
+}
+
+img.upBullet{
+	position: absolute;
+	width: 5vw;
+	height: 5vh;
+	transform: rotate(-90deg);
+}
+
+img.downBullet{
+	position: absolute;
+	width: 5vw;
+	height: 5vh;
+	transform: rotate(90deg);
+}
+
+img.leftBullet{
+	position: absolute;
+	width: 5vw;
+	height: 5vh;
+	transform: rotate(180deg);
+}
