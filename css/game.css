@@ -14,8 +14,12 @@ section.escenario{
 }
 
 img#character{
-	width: 5%;
-	left: 5px;
-	bottom:0;
+	width: 3%;
+	left: 50%;
+	bottom:50%;
+	position: absolute;
+}
+
+img.enemy{
 	position: absolute;
 }

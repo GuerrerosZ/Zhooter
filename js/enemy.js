@@ -8,16 +8,15 @@ class Enemy {
         this.danio = data.danio;
         this.attackRange = data.attackRange;
         this.attackCad = data.attackCad;
+        this.control = new EnemyControl(this);
+        this.control.createEnemy()
+        this.xPos = this.control.getPosX(); //random
+        this.yPos = this.control.getPosY(); //random
 
-        this.xPos; //random
-        this.yPos; //random
-
-        this.xCharacter = 0;
-        this.yCharacter = 0;
+        this.xCharacter = character.getX();
+        this.yCharacter = character.getY();
 
         this.movDelay = 100; //Milisegundos
-
-        alert(`se creo un enemigo ${data.name}`);
     }
 
     getId() {
@@ -33,35 +32,40 @@ class Enemy {
         return idenemys[id];
     }
 
-    notify(model) {
-        xCharacter = model.xPos;
-        yCharacter = model.yPos;
+    update(model) {
+        this.xCharacter = model.x;
+        this.yCharacter = model.y;
     }
 
     run() {
-        if (Math.SQRT2(Math.pow(xPos - xCharacter) + Math.pow(base, exponente)(yPos - yCharacter)) > attackRange) {
-            if (xCharacter > xPos) {
-                xPos += vel;
-            } else if (xCharacter < xPos) {
-                xPos -= vel;
+    	var distancia = Math.sqrt(Math.pow(this.xPos - this.xCharacter,2) + Math.pow(this.yPos - this.yCharacter,2));
+        if (distancia > this.attackRange) {
+        	if (this.xCharacter > this.xPos) {
+            	if (this.yCharacter > this.yPos) {
+            		this.control.addPos(this.vel,this.vel);
+            	}else{
+            		this.control.addPos(this.vel,-this.vel);
+            	}
+            }else{
+            	if (this.yCharacter > this.yPos) {
+            		this.control.addPos(-this.vel,this.vel);
+            	}else{
+            		this.control.addPos(-this.vel,-this.vel);
+            	}
             }
         } else {
-            atacar();
-            sleep(this.attackCad);
+            this.atacar();
         }
-        sleep(movDelay);
-        if (Math.SQRT2(Math.pow(xPos - xCharacter) + Math.pow(base, exponente)(yPos - yCharacter)) > attackRange) {
-            if (yCharacter > yPos) {
-                yPos += vel;
-            } else if (yCharacter < yPos) {
-                yPos -= vel;
-            }
-        } else {
-            atacar();
-            sleep(this.attackCad);
-        }
-        sleep(movDelay);
     }
+
+    atacar(){
+    	//alert('atacando');
+    }
+
+    setPos(x,y){
+		this.xPos = x;
+		this.yPos = y;
+	}
 }
 
 // Valores de cada Enemigo
@@ -70,7 +74,7 @@ var zombie = {
     "healt": 10,
     "vel": 25,
     "danio": 4,
-    "attackRange": 5,
+    "attackRange": 100,
     "attackCad": 1,
 };
 
@@ -79,6 +83,6 @@ var esquelo = {
     "healt": 7,
     "vel": 50,
     "danio": 2,
-    "attackRange": 5,
+    "attackRange": 100,
     "attackCad": 0.5,
 };

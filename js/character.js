@@ -16,7 +16,7 @@ class Observable {
     // Llama a todos nuestros suscriptores
     notify(model) {
         this.observers.forEach(observer => {
-            observer.notify(model);
+            observer.update(model);
         });
     }
 }
@@ -78,6 +78,14 @@ class Character extends Observable {
         };
 
         return idCharacters[id];
+    }
+
+    notify(){
+        var model = {
+            "x": this.getX(),
+            "y": this.getY()
+        }
+        super.notify(model);
     }
 }
 

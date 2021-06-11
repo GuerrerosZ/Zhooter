@@ -16,6 +16,7 @@
     <script src="js/shoot.js"></script>
     <script src="js/gun.js"></script>
     <script src="js/character.js"></script>
+    <script src="js/enemy.js"></script>
     <script src="js/session.js"></script>
 	<script src="js/runGame.js"></script>	
 
