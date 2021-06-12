@@ -17,16 +17,16 @@
     </div>
     <div id="container">
         <div id="d4">
-            <a href="#"><img class="button" src="img/tienda/PB.png" alt="" title="Revolver... Daño:"></a>
+            <button id="b4" class="button" title="Revolver... Daño:"></button>
         </div>
         <div id="d5">
-            <a href="#"><img class="button" src="img/tienda/AB.png" alt="" title="AK... Daño:"></a>
+            <button id="b5" class="button" title="AK... Daño:"></button>
         </div>
         <div id="d6">
-            <a href="#"><img class="button" src="img/tienda/SB.png" alt="" title="Escopeta... Daño:"></a>
+            <button id="b6" class="button" title="Escopeta... Daño:"></button>
         </div>
         <div id="d7">
-            <a href="#"><img class="button" src="img/tienda/RB.png" alt="" title="Rifle... Daño:"></a>
+            <button id="b7" class="button" title="Rifle... Daño:"></button>
         </div>
     </div>
 </body>

@@ -6,15 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pausa</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pauseEIndex.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section id="grilla">
-       <a href="game.php"> <input type="submit" value="REANUDAR" id="but1" class="bColor"> </a>
-        <input type="submit" value="ESTADISTICAS" id="but2" class="bColor">
-        <a href="select.php"> <input type="submit" value="SALIR AL MENU PRICIPAL" id="but3" class="bColor"> </a>
-    </section>
+    <div id="title">
+        <h1>|----------&gt PAUSA &lt----------|</h1>
+    </div>p
+    <div class="pauseContainer">
+        <div>
+            <div>
+                <button class="button" onclick="location.href='game.php'">REANUDAR</button>
+            </div>
+            <div>
+                <button class="button" onclick="location.href='estadisticas.php'">ESTADISTICAS</button>
+            </div>
+            <div>
+                <button class="button" onclick="location.href='index.php'">SALIR AL MENU PRICIPAL</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
