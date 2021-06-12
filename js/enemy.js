@@ -3,10 +3,10 @@ class Enemy {
         var data = this.selectEnemy(id);
         this.id = id;
         this.name = data.name;
-        this.healt = data.healt;
-        this.vel = data.vel;
-        this.danio = data.danio;
-        this.attackRange = data.attackRange;
+        this.healt = data.healt + parseInt(level);
+        this.vel = data.vel + parseInt(level);
+        this.danio = data.danio + parseInt(level);
+        this.attackRange = data.attackRange + parseInt(level);
         this.attackCad = data.attackCad;
         this.control = new EnemyControl(this);
         this.control.createEnemy()

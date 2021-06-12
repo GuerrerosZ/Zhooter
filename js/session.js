@@ -11,4 +11,12 @@ class Session {
         var character = new Character(respuesta['id']);
         return character;
     }
+
+    setLevel(level){
+        sessionStorage.setItem("level", level);
+    }
+
+    getLevel(){
+        return parseInt(sessionStorage.getItem("level"));
+    }
 }

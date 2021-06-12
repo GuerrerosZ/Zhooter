@@ -12,19 +12,31 @@ class Gun {
     }
 
     shootRight(){
-        this.disparo.right();
+        if(this.ammo > 0){
+            this.shoot();
+            this.disparo.right();
+        }
     }
 
     shootLeft(){
-        this.disparo.left();
+        if(this.ammo > 0){
+            this.shoot();
+            this.disparo.left();
+        }
     }
 
     shootUp(){
-        this.disparo.up();
+        if(this.ammo > 0){
+            this.shoot();
+            this.disparo.up();
+        }
     }
 
     shootDown(){
-        this.disparo.down();
+        if(this.ammo > 0){
+            this.shoot();
+            this.disparo.down();
+        }
     }
 
     resetAmmo(){
@@ -35,8 +47,12 @@ class Gun {
         this.maxAmmo = newMaxAmmo;
     }
 
-    shot(){
-        this.ammo = ammo - 1;
+    shoot(){
+        this.ammo = this.ammo - 1;      
+    }
+
+    getAmmo(){
+        return this.ammo;
     }
 }
 //constructor(range, cadency, damage, id, name, maxAmmo, bulletVel)
@@ -50,25 +66,25 @@ class Default extends Gun {
 
 class Ak extends Gun {
     constructor(){
-        super(100, 0.2, 3, 2, "ak-47", 78, 1.2,new BurstShoot());
+        super(100, 0.2, 3, 2, "ak-47", 20, 1.2,new BurstShoot());
     }
 }
 
 class Shotgun extends Gun {
     constructor(){
-        super(30, 0.8, 5, 3, "Escopeta", 28, 1.2,new PelletShoot());
+        super(30, 0.8, 5, 3, "Escopeta", 15, 1.2,new PelletShoot());
     }
 }
 
 class Rifle extends Gun {
     constructor(){
-        super(120, 1.2, 15, 4, "Rifle", 18, 1.2,new LinealShoot());
+        super(120, 1.2, 15, 4, "Rifle", 50, 1.2,new LinealShoot());
     }
 }
 
 class Revolver extends Gun {
     constructor(){
-        super(40, 1.5, 10, 5, "Revolver", 12, 1.2,new LinealShoot());
+        super(40, 1.5, 10, 5, "Revolver", 100, 1.2,new LinealShoot());
     }
 }
 
