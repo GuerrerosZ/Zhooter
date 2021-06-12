@@ -22,4 +22,5 @@ img#character{
 
 img.enemy{
 	position: absolute;
+	width: 75px;
 }

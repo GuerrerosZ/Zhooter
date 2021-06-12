@@ -16,13 +16,15 @@
 		<img id="character" src="img/sprites/character.png" alt="">
 	</section>
 
+	<script src="js/music.js"></script>
     <script src="js/controls.js"></script>
     <script src="js/shoot.js"></script>
     <script src="js/gun.js"></script>
     <script src="js/character.js"></script>
     <script src="js/enemy.js"></script>
     <script src="js/session.js"></script>
-	<script src="js/runGame.js"></script>	
+	<script src="js/runGame.js"></script>
+
 
 
 </body>

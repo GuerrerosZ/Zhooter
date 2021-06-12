@@ -24,7 +24,7 @@
 		<img src="img/characters/medina.png" characterId="4" class="character">
 	</div>
 
-
+	<script src="js/music.js"></script>
     <script src="js/controls.js"></script>
     <script src="js/shoot.js"></script>
 	<script src="js/gun.js"></script>

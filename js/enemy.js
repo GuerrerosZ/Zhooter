@@ -19,6 +19,29 @@ class Enemy {
         this.movDelay = 100; //Milisegundos
     }
 
+    setHealt(healt){
+        this.healt = healt;
+        if (this.healt <= 0) {
+           this.control.kill();
+           var aux = [];
+           for (var i = 0; i < enemys.length; i++) {
+               if (enemys[i] !== this) {
+                    aux.push(enemys[i]);
+               }
+           }
+            enemys = aux;
+        }
+    }
+
+    toDamage(damage){
+        this.setHealt(this.getHealt()-damage);
+        this.control.scream();
+    }
+
+    getHealt(){
+        return this.healt;
+    }
+
     getId() {
         return this.id;
     }
@@ -66,6 +89,10 @@ class Enemy {
 		this.xPos = x;
 		this.yPos = y;
 	}
+
+    getControl(){
+        return this.control;
+    }
 }
 
 // Valores de cada Enemigo

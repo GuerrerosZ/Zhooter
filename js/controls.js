@@ -67,7 +67,7 @@ class Control{
 		}
 
 		function pause(){
-			window.location.replace("../pause.php" , "PAUSA" , "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
+			window.location.replace("pause.php" , "PAUSA" , "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
 			//pausar juego, hasta que se cierre la ventana emergente
 		}
 	}
@@ -126,6 +126,17 @@ class EnemyControl{
 
 	addPos(x,y){
 		this.setPos(this.getPosX() + x,this.getPosY() + y);
+	}
+
+	kill(){
+		document.getElementById('escenario').removeChild(this.enemy);
+		var scream = new Audio('sound/scream2.mp3');
+		scream.play();
+	}
+
+	scream(){
+		var scream = new Audio('sound/scream.mp3');
+		scream.play();
 	}
 }
 
