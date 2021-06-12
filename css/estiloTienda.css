@@ -21,9 +21,23 @@ h1 {
 }
 
 .button {
-    border: solid 1px white;
     border-radius: 10px;
     background-color: gray;
+    height: 204px;
+    width: 240px;
+    cursor: pointer;
+}
+
+#b1 {
+    background-image: url("../img/tienda/botonDeVida.png");
+}
+
+#b2 {
+    background-image: url("../img/tienda/botonDeArmas.png");
+}
+
+#b3 {
+    background-image: url("../img/tienda/botonEnemySlow.png");
 }
 
 #d1 {
@@ -36,6 +50,22 @@ h1 {
 
 #d3 {
     padding-left: 160px;
+}
+
+#b4 {
+    background-image: url("../img/tienda/PB.png");
+}
+
+#b5 {
+    background-image: url("../img/tienda/AB.png");
+}
+
+#b6 {
+    background-image: url("../img/tienda/SB.png");
+}
+
+#b7 {
+    background-image: url("../img/tienda/RB.png");
 }
 
 #d4 {

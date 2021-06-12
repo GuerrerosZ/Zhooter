@@ -13,15 +13,14 @@
     <div id="title">
         <h1>|----------&gt TIENDA &lt----------|</h1>
     </div>
-
     <div id="container">
         <div id="d1">
-            <a href="#"><img class="button" src="img/tienda/botonDeVida.png" alt="" title="Este item aumenta en un 5% tu vida maxima"></a>
+            <button id="b1" class="button" title="Este item aumenta en un 5% tu vida maxima"></button>
         </div>
         <div id="d2">
-            <a href="elegirNuevaArma.html"><img class="button" src="img/tienda/botonDeArmas.png" alt="" title="Este item te permitira cambiar tu arma"></a>
+            <button id="b2" class="button" title="Este item te permitira cambiar tu arma" onclick="location.href='elegirNuevaArma.html'"></button>
         </div>
         <div id="d3">
-            <a href="#"><img class="button" src="img/tienda/botonEnemySlow.png" alt="" title="Este item disminuira en un 5% la velocidad de los enemigos"></a>
+            <button id="b3" class="button" title="Este item disminuira en un 5% la velocidad de los enemigos"></button>
         </div>
     </div>
