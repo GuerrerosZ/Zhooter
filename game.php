@@ -16,7 +16,7 @@
 		
 	</section>
 	<section id="escenario" class="escenario">
-		<img id="character" src="img/sprites/character.png" alt="">
+		<img id="character" src="img/sprites/characterDer1.png" alt="">
 	</section>
 
 	<script src="js/music.js"></script>

@@ -37,18 +37,18 @@ class Control {
         function up() {
             if (flagSpriteDir) {
                 if (flagSprite) {
-                    document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                    document.getElementById("character").src = "img/sprites/characterDer2.png";
                     flagSprite = false;
                 } else {
-                    document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                    document.getElementById("character").src = "img/sprites/characterDer1.png";
                     flagSprite = true;
                 }
             } else {
                 if (flagSprite) {
-                    document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                    document.getElementById("character").src = "img/sprites/characterIzq2.png";
                     flagSprite = false;
                 } else {
-                    document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                    document.getElementById("character").src = "img/sprites/characterIzq1.png";
                     flagSprite = true;
                 }
             }
@@ -63,18 +63,18 @@ class Control {
         function down() {
             if (flagSpriteDir) {
                 if (flagSprite) {
-                    document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                    document.getElementById("character").src = "img/sprites/characterDer2.png";
                     flagSprite = false;
                 } else {
-                    document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                    document.getElementById("character").src = "img/sprites/characterDer1.png";
                     flagSprite = true;
                 }
             } else {
                 if (flagSprite) {
-                    document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                    document.getElementById("character").src = "img/sprites/characterIzq2.png";
                     flagSprite = false;
                 } else {
-                    document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                    document.getElementById("character").src = "img/sprites/characterIzq1.png";
                     flagSprite = true;
                 }
             }
@@ -89,10 +89,10 @@ class Control {
         function left() {
             flagSpriteDir = false;
             if (flagSprite) {
-                document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                document.getElementById("character").src = "img/sprites/characterIzq2.png";
                 flagSprite = false;
             } else {
-                document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                document.getElementById("character").src = "img/sprites/characterIzq1.png";
                 flagSprite = true;
             }
             var newCords = cords.left - 20;
@@ -106,10 +106,10 @@ class Control {
         function right() {
             flagSpriteDir = true;
             if (flagSprite) {
-                document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                document.getElementById("character").src = "img/sprites/characterDer2.png";
                 flagSprite = false;
             } else {
-                document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                document.getElementById("character").src = "img/sprites/characterDer1.png";
                 flagSprite = true;
             }
 
