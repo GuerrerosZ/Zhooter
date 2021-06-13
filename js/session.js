@@ -20,14 +20,6 @@ class Session {
         return sessionStorage.getItem("extraHealth");
     }
 
-    static setExtraHealth(extraHealth) {
-        sessionStorage.setItem("extraHealth", extraHealth);
-        alert(this.getExtraHealth())
-    }
-
-    static getExtraHealth() {
-        return sessionStorage.getItem("extraHealth");
-    }
     setLevel(level) {
         sessionStorage.setItem("level", level);
     }

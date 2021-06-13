@@ -38,7 +38,7 @@ class Character extends Observable {
         this.xPos;
         this.yPos;
         this.statsControl = new StatsControl();
-        this.statsControl.updateAmmo(this.weaponActual.getAmmo());
+        this.updateStats();
     }
 
     setHealt(healt) {
@@ -112,7 +112,7 @@ class Character extends Observable {
         super.notify(model);
     }
 
-    updateStats(){
+    updateStats() {
         this.statsControl.updateHealt(this.getHealt());
         this.statsControl.updateAmmo(this.weaponActual.getAmmo());
     }
@@ -121,7 +121,7 @@ class Character extends Observable {
 //Creacion de Armas
 var ak = new Ak(),
     shotgun = new Shotgun()
-    rifle = new Rifle(),
+rifle = new Rifle(),
     revolver = new Revolver(),
     secondary = new Default();
 
