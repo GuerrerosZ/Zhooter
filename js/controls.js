@@ -74,8 +74,8 @@ class Control {
             //pausar juego, hasta que se cierre la ventana emergente
         }
 
-        function changeGun(){
-        	character.changeGun();
+        function changeGun() {
+            character.changeGun();
         }
     }
 
@@ -153,7 +153,6 @@ class EnemyControl {
     }
 }
 
-<<<<<<< HEAD
 class StatsControl {
     constructor() {
         this.healt = document.createElement('div');
@@ -171,9 +170,9 @@ class StatsControl {
         } catch (error) {}
     }
 
-    updateAmmo(ammo) {
+    updateAmmo(ammo, name) {
         try {
-            this.ammo.innerHTML = "Balas: " + ammo + " ➼";
+            this.ammo.innerHTML = name + ": " + ammo;
             this.stats.appendChild(this.ammo);
         } catch (error) {}
     }
@@ -190,41 +189,4 @@ class StatsControl {
         var ouch = new Audio('sound/ouch.mp3');
         ouch.play();
     }
-=======
-class StatsControl{
-	constructor(){
-		this.healt = document.createElement('div');
-		this.healt.setAttribute('class','stat');
-		this.healt.innerHTML = 100;	
-		this.ammo = document.createElement('div');
-		this.ammo.setAttribute('class','stat');
-		this.stats = document.getElementById('stats')
-	}
-
-	updateHealt(healt){
-		try{
-			this.healt.innerHTML = "Vida: " + healt + " ♥";
-			this.stats.appendChild(this.healt);
-		}catch(error){}
-	}
-
-	updateAmmo(ammo,name){
-		try{
-			this.ammo.innerHTML = name + ": " + ammo;
-			this.stats.appendChild(this.ammo);
-		}catch(error){}
-	}
-
-	dropBlood(){
-		var blood = document.createElement('div');
-		blood.setAttribute('class','blood');
-		this.stats.appendChild(blood);
-		setTimeout(cleanBlood,100);
-		function cleanBlood(){
-			this.stats.removeChild(blood);
-		}
-		var ouch = new Audio('sound/ouch.mp3');
-		ouch.play();
-	}
->>>>>>> 1cb76e05a64c18abc43d298616b379334a4e9e04
 }
