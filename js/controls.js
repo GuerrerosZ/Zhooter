@@ -1,12 +1,12 @@
 class Control {
     constructor() {
         this.character = document.getElementById("character");
-        document.addEventListener('keydown', this.move);
+        document.addEventListener('keydown', this.do);
         document.addEventListener('keyup', this.shoot);
 
     }
 
-    move() {
+    do() {
         var tecla = event.keyCode;
         var img = document.getElementById("character");
         var cords = img.getBoundingClientRect();
@@ -25,6 +25,9 @@ class Control {
                 break
             case 80: //pausa
                 pause();
+                break
+            case 69: //pausa
+                changeGun();
                 break
         }
 
@@ -69,6 +72,10 @@ class Control {
         function pause() {
             window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
             //pausar juego, hasta que se cierre la ventana emergente
+        }
+
+        function changeGun(){
+        	character.changeGun();
         }
     }
 
@@ -146,6 +153,7 @@ class EnemyControl {
     }
 }
 
+<<<<<<< HEAD
 class StatsControl {
     constructor() {
         this.healt = document.createElement('div');
@@ -182,4 +190,41 @@ class StatsControl {
         var ouch = new Audio('sound/ouch.mp3');
         ouch.play();
     }
+=======
+class StatsControl{
+	constructor(){
+		this.healt = document.createElement('div');
+		this.healt.setAttribute('class','stat');
+		this.healt.innerHTML = 100;	
+		this.ammo = document.createElement('div');
+		this.ammo.setAttribute('class','stat');
+		this.stats = document.getElementById('stats')
+	}
+
+	updateHealt(healt){
+		try{
+			this.healt.innerHTML = "Vida: " + healt + " ♥";
+			this.stats.appendChild(this.healt);
+		}catch(error){}
+	}
+
+	updateAmmo(ammo,name){
+		try{
+			this.ammo.innerHTML = name + ": " + ammo;
+			this.stats.appendChild(this.ammo);
+		}catch(error){}
+	}
+
+	dropBlood(){
+		var blood = document.createElement('div');
+		blood.setAttribute('class','blood');
+		this.stats.appendChild(blood);
+		setTimeout(cleanBlood,100);
+		function cleanBlood(){
+			this.stats.removeChild(blood);
+		}
+		var ouch = new Audio('sound/ouch.mp3');
+		ouch.play();
+	}
+>>>>>>> 1cb76e05a64c18abc43d298616b379334a4e9e04
 }

@@ -14,28 +14,28 @@ class Gun {
     shootRight(){
         if(this.ammo > 0){
             this.shoot();
-            this.disparo.right();
+            this.disparo.right(this.damage);
         }
     }
 
     shootLeft(){
         if(this.ammo > 0){
             this.shoot();
-            this.disparo.left();
+            this.disparo.left(this.damage);
         }
     }
 
     shootUp(){
         if(this.ammo > 0){
             this.shoot();
-            this.disparo.up();
+            this.disparo.up(this.damage);
         }
     }
 
     shootDown(){
         if(this.ammo > 0){
             this.shoot();
-            this.disparo.down();
+            this.disparo.down(this.damage);
         }
     }
 
@@ -54,6 +54,10 @@ class Gun {
     getAmmo(){
         return this.ammo;
     }
+
+    getName(){
+        return this.name;
+    }
 }
 //constructor(range, cadency, damage, id, name, maxAmmo, bulletVel)
 //cadency: tiempo entre disparos
@@ -66,19 +70,19 @@ class Default extends Gun {
 
 class Ak extends Gun {
     constructor(){
-        super(100, 0.2, 3, 2, "ak-47", 20, 1.2,new BurstShoot());
+        super(100, 0.2, 5, 2, "ak-47", 20, 1.2,new BurstShoot());
     }
 }
 
 class Shotgun extends Gun {
     constructor(){
-        super(30, 0.8, 5, 3, "Escopeta", 15, 1.2,new PelletShoot());
+        super(30, 0.8, 3, 3, "Escopeta", 15, 1.2,new PelletShoot());
     }
 }
 
 class Rifle extends Gun {
     constructor(){
-        super(120, 1.2, 15, 4, "Rifle", 50, 1.2,new LinealShoot());
+        super(120, 1.2, 20, 4, "Rifle", 50, 1.2,new LinealShoot());
     }
 }
 

@@ -20,13 +20,13 @@ class Shoot{
     	return bullet;
     }
 
-    doDamage(bullet,interval){
+    doDamage(bullet,interval,damage){
         for (var i = 0; i < enemys.length; i++) {
             var enemy = enemys[i].getControl();
             var xEnemy = enemy.getPosX();
             var yEnemy = enemy.getPosY();
             if (bullet.x - xEnemy < 80 && bullet.y - yEnemy < 80 && bullet.y > yEnemy && bullet.x > xEnemy) {
-                enemys[i].toDamage(1);
+                enemys[i].toDamage(damage);
                 clearInterval(interval);
                 return true;
             }  
@@ -40,14 +40,14 @@ class LinealShoot extends Shoot{
         super();
     }
 
-    right(){
+    right(damage){
         var padre = this;
     	var bullet = super.spawn();
     	bullet.setAttribute('class','rightBullet');
     	var interval = setInterval(function(){
     		var desplazamiento = bullet.x + 10;
     		bullet.style.left = desplazamiento + 'px';
-            var colision = padre.doDamage(bullet,interval);
+            var colision = padre.doDamage(bullet,interval,damage);
     		if (window.innerWidth < bullet.x || colision) {
 		    	clearInterval(interval);
 		    	document.getElementById('escenario').removeChild(bullet);
@@ -55,14 +55,14 @@ class LinealShoot extends Shoot{
     	},10);
     }
 
-    up(){
+    up(damage){
         var padre = this;
         var bullet = super.spawn();
     	bullet.setAttribute('class','upBullet');
     	var interval = setInterval(function(){
     		var desplazamiento = bullet.y - 10;
     		bullet.style.top = desplazamiento + 'px';
-            var colision = padre.doDamage(bullet,interval);
+            var colision = padre.doDamage(bullet,interval,damage);
     		if (0 > bullet.y || colision) {
 		    	clearInterval(interval);
 		    	document.getElementById('escenario').removeChild(bullet);
@@ -70,14 +70,14 @@ class LinealShoot extends Shoot{
     	},10);	
     }
 
-    down(){
+    down(damage){
         var padre = this;
         var bullet = super.spawn();
     	bullet.setAttribute('class','downBullet');
     	var interval = setInterval(function(){
     		var desplazamiento = bullet.y + 10;
     		bullet.style.top = desplazamiento + 'px';
-            var colision = padre.doDamage(bullet,interval);
+            var colision = padre.doDamage(bullet,interval,damage);
     		if (window.innerHeight < bullet.y || colision) {
 		    	clearInterval(interval);
 		    	document.getElementById('escenario').removeChild(bullet);
@@ -85,14 +85,14 @@ class LinealShoot extends Shoot{
     	},10);	
     }
 
-    left(){
+    left(damage){
         var padre = this;
         var bullet = super.spawn();
     	bullet.setAttribute('class','leftBullet');
     	var interval = setInterval(function(){
     		var desplazamiento = bullet.x - 10;
     		bullet.style.left = desplazamiento + 'px';
-            var colision = padre.doDamage(bullet,interval);
+            var colision = padre.doDamage(bullet,interval,damage);
     		if (0 > bullet.x || colision) {
 		    	clearInterval(interval);
 		    	document.getElementById('escenario').removeChild(bullet);
@@ -107,46 +107,46 @@ class BurstShoot extends Shoot{
         this.linealShoot = new LinealShoot();
     }
 
-    right(i = 0){
+    right(damage,i = 0){
     	var self = this;
 		var interval = setInterval(function(){
     		if (i == 4) {
     			clearInterval(interval);
     		}
-    		self.linealShoot.right();
+    		self.linealShoot.right(damage);
     		i += 1;
     	},100);
     }
 
-    up(i = 0){
+    up(damage,i = 0){
        var self = this;
 		var interval = setInterval(function(){
     		if (i == 4) {
     			clearInterval(interval);
     		}
-    		self.linealShoot.up();
+    		self.linealShoot.up(damage);
     		i += 1;
     	},100);
     }
 
-    down(i = 0){
+    down(damage,i = 0){
         var self = this;
 		var interval = setInterval(function(){
     		if (i == 4) {
     			clearInterval(interval);
     		}
-    		self.linealShoot.down();
+    		self.linealShoot.down(damage);
     		i += 1;
     	},100);
     }
 
-    left(i = 0){
+    left(damage,i = 0){
         var self = this;
 		var interval = setInterval(function(){
     		if (i == 4) {
     			clearInterval(interval);
     		}
-    		self.linealShoot.left();
+    		self.linealShoot.left(damage);
     		i += 1;
     	},100);
     }
@@ -159,27 +159,27 @@ class PelletShoot extends Shoot{
         this.burstShoot = new BurstShoot();
     }
     
-    right(){
-        this.burstShoot.right();
-        this.linealShoot.up();
-        this.linealShoot.down();
+    right(damage){
+        this.burstShoot.right(damage);
+        this.linealShoot.up(damage);
+        this.linealShoot.down(damage);
     }
 
-    up(){
-        this.linealShoot.right();
-        this.burstShoot.up();
-        this.linealShoot.left();
+    up(damage){
+        this.linealShoot.right(damage);
+        this.burstShoot.up(damage);
+        this.linealShoot.left(damage);
     }
 
-    down(){
-        this.linealShoot.right();
-        this.burstShoot.down();
-        this.linealShoot.left();
+    down(damage){
+        this.linealShoot.right(damage);
+        this.burstShoot.down(damage);
+        this.linealShoot.left(damage);
     }
 
-    left(){
-        this.linealShoot.up();
-        this.burstShoot.left();
-        this.linealShoot.down();
+    left(damage){
+        this.linealShoot.up(damage);
+        this.burstShoot.left(damage);
+        this.linealShoot.down(damage);
     }
 }
