@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-#container {
+.container {
     display: flex;
     flex-direction: row;
     padding-top: 30px;
@@ -82,4 +82,20 @@ h1 {
 
 #d7 {
     padding-left: 75px;
+}
+
+.container img {
+    width: 10%;
+}
+
+#gif1 {
+    padding-left: 200px;
+}
+
+#gif2 {
+    padding-left: 270px;
+}
+
+#gif3 {
+    padding-left: 270px;
 }

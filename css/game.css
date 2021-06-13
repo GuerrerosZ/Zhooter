@@ -1,26 +1,26 @@
-*{
-	margin: 0;
-	overflow: hidden;
-	box-sizing: border-box;
+* {
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-section.escenario{
-	background: url(../img/stage/stage1.png);
-	background-repeat: repeat;
-	background-size: contain;  
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+section.escenario {
+    background: url(../img/stage/stage.png);
+    background-repeat: repeat;
+    background-size: contain;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
-img#character{
-	width: 3%;
-	left: 50%;
-	bottom:50%;
-	position: absolute;
+img#character {
+    width: 3%;
+    left: 50%;
+    bottom: 50%;
+    position: absolute;
 }
 
-img.enemy{
-	position: absolute;
-	width: 75px;
+img.enemy {
+    position: absolute;
+    width: 75px;
 }

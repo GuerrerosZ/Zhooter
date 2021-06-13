@@ -1,9 +1,10 @@
+var flagSpriteDir = true;
+var flagSprite = true;
 class Control {
     constructor() {
         this.character = document.getElementById("character");
         document.addEventListener('keydown', this.do);
         document.addEventListener('keyup', this.shoot);
-
     }
 
     do() {
@@ -34,6 +35,23 @@ class Control {
         character.notify();
 
         function up() {
+            if (flagSpriteDir) {
+                if (flagSprite) {
+                    document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                    flagSprite = false;
+                } else {
+                    document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                    flagSprite = true;
+                }
+            } else {
+                if (flagSprite) {
+                    document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                    flagSprite = false;
+                } else {
+                    document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                    flagSprite = true;
+                }
+            }
             var newCords = cords.top - 20;
             if (newCords > -30) {
                 img.style.top = newCords + "px";
@@ -43,6 +61,23 @@ class Control {
         }
 
         function down() {
+            if (flagSpriteDir) {
+                if (flagSprite) {
+                    document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                    flagSprite = false;
+                } else {
+                    document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                    flagSprite = true;
+                }
+            } else {
+                if (flagSprite) {
+                    document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                    flagSprite = false;
+                } else {
+                    document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                    flagSprite = true;
+                }
+            }
             var newCords = cords.top + 20;
             if (newCords < window.innerHeight) {
                 img.style.top = newCords + "px";
@@ -52,6 +87,14 @@ class Control {
         }
 
         function left() {
+            flagSpriteDir = false;
+            if (flagSprite) {
+                document.getElementById("character").src = "../img/sprites/characterIzq2.png";
+                flagSprite = false;
+            } else {
+                document.getElementById("character").src = "../img/sprites/characterIzq1.png";
+                flagSprite = true;
+            }
             var newCords = cords.left - 20;
             if (newCords > -30) {
                 img.style.left = newCords + "px";
@@ -61,6 +104,15 @@ class Control {
         }
 
         function right() {
+            flagSpriteDir = true;
+            if (flagSprite) {
+                document.getElementById("character").src = "../img/sprites/characterDer2.png";
+                flagSprite = false;
+            } else {
+                document.getElementById("character").src = "../img/sprites/characterDer1.png";
+                flagSprite = true;
+            }
+
             var newCords = cords.left + 20;
             if (newCords < window.innerWidth) {
                 img.style.left = newCords + "px";
@@ -71,7 +123,7 @@ class Control {
 
         function pause() {
             Session.setHealth(character.getHealt());
-            window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");    
+            window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
         }
 
         function changeGun() {
@@ -155,23 +207,23 @@ class EnemyControl {
 
 class StatsControl {
     constructor() {
-        this.healt = document.createElement('div');
-        this.healt.setAttribute('class', 'stat');
+        this.health = document.createElement('div');
+        this.health.setAttribute('class', 'stat');
         this.ammo = document.createElement('div');
         this.ammo.setAttribute('class', 'stat');
         this.stats = document.getElementById('stats')
     }
 
-    updateHealt(healt) {
+    updateHealt(health) {
         try {
-            this.healt.innerHTML = "Vida: " + healt + " ♥";
-            this.stats.appendChild(this.healt);
+            this.health.innerHTML = "VIDA: " + health + " ♥";
+            this.stats.appendChild(this.health);
         } catch (error) {}
     }
 
     updateAmmo(ammo, name) {
         try {
-            this.ammo.innerHTML = name + ": " + ammo;
+            this.ammo.innerHTML = name.toUpperCase() + ": " + ammo;
             this.stats.appendChild(this.ammo);
         } catch (error) {}
     }
@@ -191,7 +243,7 @@ class StatsControl {
 }
 
 class BulletControl {
-    constructor(){
+    constructor() {
         var x = this.getX();
         var y = this.getY();
         var bullet = document.createElement('img');
@@ -202,11 +254,11 @@ class BulletControl {
         return bullet;
     }
 
-    getX(){
+    getX() {
         return character.getX();
     }
 
-    getY(){
+    getY() {
         return character.getY();
     }
 }

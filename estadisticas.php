@@ -21,26 +21,35 @@
         <div class="info">
             <p id="p1">
                 ENEMIGOS DERROTADOS:
+            </p>
+            <p id="d1">
                 <script type="text/javascript">
                     document.write(Session.getKilledEnemies());
                 </script>
             </p>
             <p id="p2">
                 NIVEL ACTUAL:
+            </p>
+            <p id="d2">
                 <script type="text/javascript">
                     document.write(Session.getLevel());
                 </script>
             </p>
+            
             <p id="p3">
-                VIDA ACTUAL: 
-                <script type="text/javascript">
+                VIDA ACTUAL:
+            </p> 
+            <p id="d3">
+                <script id="d3" type="text/javascript">
                     document.write(Session.getHealth());
                 </script>
             </p>
             <p id="p4">
                 ARMA:
-                <script type="text/javascript">
-                    document.write(Session.getGun());
+            </p> 
+            <p id="d4">
+                <script id="d4" type="text/javascript">
+                    document.write(Session.getGun().toUpperCase());
                 </script>
             </p>
         </div>

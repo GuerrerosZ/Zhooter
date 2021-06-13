@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/bullet.css">
     <link rel="stylesheet" href="css/stats.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon/favicon.png">
 </head>
 <body ondragstart="return false" onselectstart="return false">

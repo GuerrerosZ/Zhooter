@@ -15,13 +15,9 @@
     <div id="title">
         <h1>|----------&gt TIENDA &lt----------|</h1>
     </div>
-    <div id="container">
+    <div class="container">
         <div id="d1">
-            <button 
-                id="b1" 
-                class="button" 
-                onclick="Session.setExtraHealth(parseInt(Session.getExtraHealth()) + parseInt(10));Session.setHealth(100 + parseInt(Session.getExtraHealth())); location.href='game.php'" 
-                title="Este item aumenta en 10 puntos la vida maxima del personaje">                
+            <button id="b1" class="button" onclick="Session.setExtraHealth(parseInt(Session.getExtraHealth()) + parseInt(10));Session.setHealth(100 + parseInt(Session.getExtraHealth())); location.href='game.php'" title="Este item aumenta en 10 puntos la vida maxima del personaje">                
             </button>
         </div>
         <div id="d2">
@@ -30,6 +26,11 @@
         <div id="d3">
             <button id="b3" class="button" onclick="Session.setWeakness(1); location.href='game.php'" title="Este item disminuira evitara que la velocidad de los enemigos se vea acelerada en este nivel"></button>
         </div>
+    </div>
+    <div class="container">
+        <img id="gif1" src="img/tienda/Sprite.gif" alt="">
+        <img id="gif2" src="img/tienda/Sprite.gif" alt="">
+        <img id="gif3" src="img/tienda/Sprite.gif" alt="">
     </div>
     <script>
         Session.setPremiumGun(0);

@@ -19,12 +19,18 @@
     </div>
     <div id="flex">
         <div class="infoMuerte">
-            <p id="p1">ENEMIGOS DERROTADOS:
+            <p id="p1">
+                ENEMIGOS DERROTADOS:
+            </p>
+            <p id="d1">
                 <script type="text/javascript">
                     document.write(Session.getKilledEnemies());
                 </script>
             </p>
-            <p id="p2">NIVEL ALCANZADO:
+            <p id="p2">
+                NIVEL ALCANZADO:
+            </p>
+            <p id="d2">
                 <script type="text/javascript">
                     document.write(Session.getLevel());
                 </script>
