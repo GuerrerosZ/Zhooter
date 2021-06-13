@@ -1,23 +1,8 @@
 class Shoot{
     constructor(){}
 
-    getX(){
-    	return character.getX();
-    }
-
-    getY(){
-    	return character.getY();
-    }
-
     spawn(){
-    	var x = this.getX();
-    	var y = this.getY();
-    	var bullet = document.createElement('img');
-    	bullet.src = 'img/bullets/bullet.png';
-    	bullet.style.top = y + 'px';
-    	bullet.style.left = x + 'px';
-    	document.getElementById('escenario').appendChild(bullet);
-    	return bullet;
+    	return this.bulletControl = new BulletControl();
     }
 
     doDamage(bullet,interval,damage){

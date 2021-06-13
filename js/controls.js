@@ -189,3 +189,24 @@ class StatsControl {
         ouch.play();
     }
 }
+
+class BulletControl {
+    constructor(){
+        var x = this.getX();
+        var y = this.getY();
+        var bullet = document.createElement('img');
+        bullet.src = 'img/bullets/bullet.png';
+        bullet.style.top = y + 'px';
+        bullet.style.left = x + 'px';
+        document.getElementById('escenario').appendChild(bullet);
+        return bullet;
+    }
+
+    getX(){
+        return character.getX();
+    }
+
+    getY(){
+        return character.getY();
+    }
+}
