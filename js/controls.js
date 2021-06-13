@@ -157,8 +157,10 @@ class StatsControl{
 	}
 
 	updateHealt(healt){
-		this.healt.innerHTML = "Vida: " + healt + " ♥";
-		this.stats.appendChild(this.healt);
+		try{
+			this.healt.innerHTML = "Vida: " + healt + " ♥";
+			this.stats.appendChild(this.healt);
+		}catch(error){}
 	}
 
 	updateAmmo(ammo){

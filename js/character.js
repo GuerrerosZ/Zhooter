@@ -38,7 +38,7 @@ class Character extends Observable {
         this.xPos;
         this.yPos;
         this.statsControl = new StatsControl();
-        this.statsControl.updateAmmo(this.weaponActual.getAmmo());
+        this.updateStats();
     }
 
     setHealt(healt){
