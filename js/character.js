@@ -27,7 +27,7 @@ class Character extends Observable {
         var data = this.selectCharacter(id);
         this.id = id;
         this.name = data.name;
-        this.healt = data.healt;
+        this.health = data.health;
         this.vel = data.vel;
         this.armor = data.armor;
         this.primaryWeapon = data.primaryWeapon;
@@ -41,7 +41,7 @@ class Character extends Observable {
         this.updateStats();
     }
 
-    setHealt(healt){
+    setHealt(healt) {
         this.healt = healt;
         this.updateStats();
         if (this.healt <= 0) {
@@ -49,12 +49,12 @@ class Character extends Observable {
         }
     }
 
-    toDamage(damage){
-        this.setHealt(this.getHealt()-damage);
+    toDamage(damage) {
+        this.setHealt(this.getHealt() - damage);
         this.statsControl.dropBlood();
     }
 
-    getHealt(){
+    getHealt() {
         return this.healt;
     }
 
@@ -104,7 +104,7 @@ class Character extends Observable {
         return idCharacters[id];
     }
 
-    notify(){
+    notify() {
         var model = {
             "x": this.getX(),
             "y": this.getY()
@@ -112,7 +112,7 @@ class Character extends Observable {
         super.notify(model);
     }
 
-    updateStats(){
+    updateStats() {
         this.statsControl.updateHealt(this.getHealt());
         this.statsControl.updateAmmo(this.weaponActual.getAmmo());
     }
@@ -121,7 +121,7 @@ class Character extends Observable {
 //Creacion de Armas
 var ak = new Ak(),
     shotgun = new Shotgun()
-    rifle = new Rifle(),
+rifle = new Rifle(),
     revolver = new Revolver(),
     secondary = new Default();
 

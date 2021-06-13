@@ -1,8 +1,7 @@
 class Session {
-    constructor() {
-    }
+    constructor() {}
 
-    addCharacter(character){
+    addCharacter(character) {
         sessionStorage.setItem("character", JSON.stringify(character));
     }
 
@@ -12,11 +11,20 @@ class Session {
         return character;
     }
 
-    setLevel(level){
+    static setExtraHealth(extraHealth) {
+        sessionStorage.setItem("extraHealth", extraHealth);
+        alert(this.getExtraHealth())
+    }
+
+    static getExtraHealth() {
+        return sessionStorage.getItem("extraHealth");
+    }
+
+    setLevel(level) {
         sessionStorage.setItem("level", level);
     }
 
-    getLevel(){
+    getLevel() {
         return parseInt(sessionStorage.getItem("level"));
     }
 }
