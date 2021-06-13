@@ -24,4 +24,5 @@
         <div id="d3">
             <button id="b3" class="button" title="Este item disminuira en un 5% la velocidad de los enemigos"></button>
         </div>
+        <a href="game.php">Siguiente nivel</a>
     </div>

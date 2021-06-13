@@ -38,11 +38,12 @@ class Character extends Observable {
         this.xPos;
         this.yPos;
         this.statsControl = new StatsControl();
+        this.statsControl.updateAmmo(this.weaponActual.getAmmo());
     }
 
     setHealt(healt) {
         this.healt = healt;
-        this.statsControl.updateHealt(healt);
+        this.updateStats();
         if (this.healt <= 0) {
             window.location.replace("gameOver.php");
         }
@@ -59,18 +60,22 @@ class Character extends Observable {
 
     shootRight() {
         this.primaryWeapon.shootRight();
+        this.updateStats();
     }
 
     shootLeft() {
         this.primaryWeapon.shootLeft();
+        this.updateStats();
     }
 
     shootUp() {
         this.primaryWeapon.shootUp();
+        this.updateStats();
     }
 
     shootDown() {
         this.primaryWeapon.shootDown();
+        this.updateStats();
     }
 
     getControls() {
@@ -106,12 +111,17 @@ class Character extends Observable {
         }
         super.notify(model);
     }
+
+    updateStats(){
+        this.statsControl.updateHealt(this.getHealt());
+        this.statsControl.updateAmmo(this.weaponActual.getAmmo());
+    }
 }
 
 //Creacion de Armas
 var ak = new Ak(),
     shotgun = new Shotgun()
-rifle = new Rifle(),
+    rifle = new Rifle(),
     revolver = new Revolver(),
     secondary = new Default();
 

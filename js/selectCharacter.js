@@ -1,7 +1,9 @@
 (function() {
     var session = new Session();
-    characters = document.getElementsByClassName('character');
+
     Session.setExtraHealth(0);
+    session.setLevel(1);
+    characters = document.getElementsByClassName('character');
     for (var i = 0; i < characters.length; i++) {
         characters[i].addEventListener('click', function() {
             id = this.getAttribute('characterId');

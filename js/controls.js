@@ -103,8 +103,14 @@ class EnemyControl{
 		this.enemy.setAttribute('src','img/sprites/zombie.png');
 		this.enemy.setAttribute('class','enemy');
 		document.getElementById('escenario').appendChild(this.enemy);
-		var x = window.innerHeight * Math.random();
-		var y = window.innerHeight * Math.random()
+		var x = window.innerWidth * Math.random();
+		var y = window.innerHeight * Math.random();
+		while(Math.abs(x-window.innerWidth/2) < 100){
+			x = window.innerWidth * Math.random();
+		}
+		while(Math.abs(y-window.innerHeight/2) < 100){
+			y = window.innerHeight * Math.random();
+		}
 		this.setPos(x,y);
 	}
 
@@ -145,12 +151,21 @@ class StatsControl{
 		this.healt = document.createElement('div');
 		this.healt.setAttribute('class','stat');
 		this.healt.innerHTML = 100;	
+		this.ammo = document.createElement('div');
+		this.ammo.setAttribute('class','stat');
 		this.stats = document.getElementById('stats')
 	}
 
 	updateHealt(healt){
 		this.healt.innerHTML = "Vida: " + healt + " ♥";
 		this.stats.appendChild(this.healt);
+	}
+
+	updateAmmo(ammo){
+		try{
+			this.ammo.innerHTML = "Balas: " + ammo + " ➼";
+			this.stats.appendChild(this.ammo);
+		}catch(error){}
 	}
 
 	dropBlood(){
