@@ -2,6 +2,7 @@
     var session = new Session();
 
     Session.setExtraHealth(0);
+    Session.setSlowMove(0);
     session.setLevel(1);
     characters = document.getElementsByClassName('character');
     for (var i = 0; i < characters.length; i++) {

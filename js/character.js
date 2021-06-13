@@ -27,7 +27,7 @@ class Character extends Observable {
         var data = this.selectCharacter(id);
         this.id = id;
         this.name = data.name;
-        this.healt = data.healt;
+        this.healt = data.healt + parseInt(Session.getExtraHealth());
         this.vel = data.vel;
         this.armor = data.armor;
         this.primaryWeapon = data.primaryWeapon;
@@ -59,22 +59,22 @@ class Character extends Observable {
     }
 
     shootRight() {
-        this.primaryWeapon.shootRight();
+        this.defaultWeapon.shootRight();
         this.updateStats();
     }
 
     shootLeft() {
-        this.primaryWeapon.shootLeft();
+        this.defaultWeapon.shootLeft();
         this.updateStats();
     }
 
     shootUp() {
-        this.primaryWeapon.shootUp();
+        this.defaultWeapon.shootUp();
         this.updateStats();
     }
 
     shootDown() {
-        this.primaryWeapon.shootDown();
+        this.defaultWeapon.shootDown();
         this.updateStats();
     }
 

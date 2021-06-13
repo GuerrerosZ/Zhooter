@@ -4,7 +4,7 @@ class Enemy {
         this.id = id;
         this.name = data.name;
         this.healt = data.healt + parseInt(level);
-        this.vel = data.vel + parseInt(level);
+        this.vel = data.vel + parseInt(level) - parseInt(Session.getSlowMove());
         this.danio = data.danio + parseInt(level);
         this.attackRange = data.attackRange + parseInt(level);
         this.attackCad = data.attackCad;
@@ -19,26 +19,26 @@ class Enemy {
         this.movDelay = 100; //Milisegundos
     }
 
-    setHealt(healt){
+    setHealt(healt) {
         this.healt = healt;
         if (this.healt <= 0) {
-           this.control.kill();
-           var aux = [];
-           for (var i = 0; i < enemys.length; i++) {
-               if (enemys[i] !== this) {
+            this.control.kill();
+            var aux = [];
+            for (var i = 0; i < enemys.length; i++) {
+                if (enemys[i] !== this) {
                     aux.push(enemys[i]);
-               }
-           }
+                }
+            }
             enemys = aux;
         }
     }
 
-    toDamage(damage){
-        this.setHealt(this.getHealt()-damage);
+    toDamage(damage) {
+        this.setHealt(this.getHealt() - damage);
         this.control.scream();
     }
 
-    getHealt(){
+    getHealt() {
         return this.healt;
     }
 
@@ -61,36 +61,36 @@ class Enemy {
     }
 
     run() {
-    	var distancia = Math.sqrt(Math.pow(this.xPos - this.xCharacter,2) + Math.pow(this.yPos - this.yCharacter,2));
+        var distancia = Math.sqrt(Math.pow(this.xPos - this.xCharacter, 2) + Math.pow(this.yPos - this.yCharacter, 2));
         if (distancia > this.attackRange) {
-        	if (this.xCharacter > this.xPos) {
-            	if (this.yCharacter > this.yPos) {
-            		this.control.addPos(this.vel,this.vel);
-            	}else{
-            		this.control.addPos(this.vel,-this.vel);
-            	}
-            }else{
-            	if (this.yCharacter > this.yPos) {
-            		this.control.addPos(-this.vel,this.vel);
-            	}else{
-            		this.control.addPos(-this.vel,-this.vel);
-            	}
+            if (this.xCharacter > this.xPos) {
+                if (this.yCharacter > this.yPos) {
+                    this.control.addPos(this.vel, this.vel);
+                } else {
+                    this.control.addPos(this.vel, -this.vel);
+                }
+            } else {
+                if (this.yCharacter > this.yPos) {
+                    this.control.addPos(-this.vel, this.vel);
+                } else {
+                    this.control.addPos(-this.vel, -this.vel);
+                }
             }
         } else {
             this.atacar();
         }
     }
 
-    atacar(){
-    	character.toDamage(this.danio);
+    atacar() {
+        character.toDamage(this.danio);
     }
 
-    setPos(x,y){
-		this.xPos = x;
-		this.yPos = y;
-	}
+    setPos(x, y) {
+        this.xPos = x;
+        this.yPos = y;
+    }
 
-    getControl(){
+    getControl() {
         return this.control;
     }
 }

@@ -146,39 +146,40 @@ class EnemyControl {
     }
 }
 
-class StatsControl{
-	constructor(){
-		this.healt = document.createElement('div');
-		this.healt.setAttribute('class','stat');
-		this.healt.innerHTML = 100;	
-		this.ammo = document.createElement('div');
-		this.ammo.setAttribute('class','stat');
-		this.stats = document.getElementById('stats')
-	}
+class StatsControl {
+    constructor() {
+        this.healt = document.createElement('div');
+        this.healt.setAttribute('class', 'stat');
+        this.healt.innerHTML = 100;
+        this.ammo = document.createElement('div');
+        this.ammo.setAttribute('class', 'stat');
+        this.stats = document.getElementById('stats')
+    }
 
-	updateHealt(healt){
-		try{
-			this.healt.innerHTML = "Vida: " + healt + " ♥";
-			this.stats.appendChild(this.healt);
-		}catch(error){}
-	}
+    updateHealt(healt) {
+        try {
+            this.healt.innerHTML = "Vida: " + healt + " ♥";
+            this.stats.appendChild(this.healt);
+        } catch (error) {}
+    }
 
-	updateAmmo(ammo){
-		try{
-			this.ammo.innerHTML = "Balas: " + ammo + " ➼";
-			this.stats.appendChild(this.ammo);
-		}catch(error){}
-	}
+    updateAmmo(ammo) {
+        try {
+            this.ammo.innerHTML = "Balas: " + ammo + " ➼";
+            this.stats.appendChild(this.ammo);
+        } catch (error) {}
+    }
 
-	dropBlood(){
-		var blood = document.createElement('div');
-		blood.setAttribute('class','blood');
-		this.stats.appendChild(blood);
-		setTimeout(cleanBlood,100);
-		function cleanBlood(){
-			this.stats.removeChild(blood);
-		}
-		var ouch = new Audio('sound/ouch.mp3');
-		ouch.play();
-	}
+    dropBlood() {
+        var blood = document.createElement('div');
+        blood.setAttribute('class', 'blood');
+        this.stats.appendChild(blood);
+        setTimeout(cleanBlood, 100);
+
+        function cleanBlood() {
+            this.stats.removeChild(blood);
+        }
+        var ouch = new Audio('sound/ouch.mp3');
+        ouch.play();
+    }
 }

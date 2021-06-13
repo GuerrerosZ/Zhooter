@@ -26,4 +26,16 @@ class Session {
     getLevel() {
         return parseInt(sessionStorage.getItem("level"));
     }
+
+    static setSlowMove(flag) {
+        if (flag == 0) {
+            sessionStorage.setItem("slowMove", 0);
+        } else {
+            sessionStorage.setItem("slowMove", sessionStorage.getItem("level"));
+        }
+    }
+
+    static getSlowMove() {
+        return sessionStorage.getItem("slowMove");
+    }
 }
