@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <script src="js/session.js"></script>
+    <link rel="icon" type="image/png" href="img/favicon/favicon.png">
 </head>
 
 <body>

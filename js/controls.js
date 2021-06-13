@@ -1,12 +1,12 @@
 class Control {
     constructor() {
         this.character = document.getElementById("character");
-        document.addEventListener('keydown', this.move);
+        document.addEventListener('keydown', this.do);
         document.addEventListener('keyup', this.shoot);
 
     }
 
-    move() {
+    do() {
         var tecla = event.keyCode;
         var img = document.getElementById("character");
         var cords = img.getBoundingClientRect();
@@ -25,6 +25,9 @@ class Control {
                 break
             case 80: //pausa
                 pause();
+                break
+            case 69: //pausa
+                changeGun();
                 break
         }
 
@@ -69,6 +72,10 @@ class Control {
         function pause() {
             window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
             //pausar juego, hasta que se cierre la ventana emergente
+        }
+
+        function changeGun(){
+        	character.changeGun();
         }
     }
 
@@ -163,9 +170,9 @@ class StatsControl{
 		}catch(error){}
 	}
 
-	updateAmmo(ammo){
+	updateAmmo(ammo,name){
 		try{
-			this.ammo.innerHTML = "Balas: " + ammo + " ➼";
+			this.ammo.innerHTML = name + ": " + ammo;
 			this.stats.appendChild(this.ammo);
 		}catch(error){}
 	}

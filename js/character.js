@@ -59,22 +59,22 @@ class Character extends Observable {
     }
 
     shootRight() {
-        this.primaryWeapon.shootRight();
+        this.weaponActual.shootRight();
         this.updateStats();
     }
 
     shootLeft() {
-        this.primaryWeapon.shootLeft();
+        this.weaponActual.shootLeft();
         this.updateStats();
     }
 
     shootUp() {
-        this.primaryWeapon.shootUp();
+        this.weaponActual.shootUp();
         this.updateStats();
     }
 
     shootDown() {
-        this.primaryWeapon.shootDown();
+        this.weaponActual.shootDown();
         this.updateStats();
     }
 
@@ -114,7 +114,16 @@ class Character extends Observable {
 
     updateStats() {
         this.statsControl.updateHealt(this.getHealt());
-        this.statsControl.updateAmmo(this.weaponActual.getAmmo());
+        this.statsControl.updateAmmo(this.weaponActual.getAmmo(),this.weaponActual.getName());
+    }
+
+    changeGun(){
+        if (this.weaponActual === this.primaryWeapon) {
+            this.weaponActual = this.defaultWeapon;
+        }else{
+            this.weaponActual = this.primaryWeapon;
+        }
+        this.updateStats();
     }
 }
 

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/bullet.css">
     <link rel="stylesheet" href="css/stats.css">
+    <link rel="icon" type="image/png" href="img/favicon/favicon.png">
 </head>
 <body ondragstart="return false" onselectstart="return false">
 	<section id="stats">
