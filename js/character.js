@@ -27,11 +27,12 @@ class Character extends Observable {
         var data = this.selectCharacter(id);
         this.id = id;
         this.name = data.name;
-        this.healt = data.healt;
+        this.health = data.health;
         this.vel = data.vel;
         this.armor = data.armor;
         this.primaryWeapon = data.primaryWeapon;
         this.defaultWeapon = data.defaultWeapon;
+        this.weaponActual = this.primaryWeapon;
         this.controls = new Control();
         this.personaje = document.getElementById('character');
         this.xPos;
@@ -39,7 +40,7 @@ class Character extends Observable {
         this.statsControl = new StatsControl();
     }
 
-    setHealt(healt){
+    setHealt(healt) {
         this.healt = healt;
         this.statsControl.updateHealt(healt);
         if (this.healt <= 0) {
@@ -47,12 +48,12 @@ class Character extends Observable {
         }
     }
 
-    toDamage(damage){
-        this.setHealt(this.getHealt()-damage);
+    toDamage(damage) {
+        this.setHealt(this.getHealt() - damage);
         this.statsControl.dropBlood();
     }
 
-    getHealt(){
+    getHealt() {
         return this.healt;
     }
 
@@ -98,7 +99,7 @@ class Character extends Observable {
         return idCharacters[id];
     }
 
-    notify(){
+    notify() {
         var model = {
             "x": this.getX(),
             "y": this.getY()
