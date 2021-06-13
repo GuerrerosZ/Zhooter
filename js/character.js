@@ -27,7 +27,7 @@ class Character extends Observable {
         var data = this.selectCharacter(id);
         this.id = id;
         this.name = data.name;
-        this.health = data.health;
+        this.healt = data.healt;
         this.vel = data.vel;
         this.armor = data.armor;
         this.primaryWeapon = data.primaryWeapon;

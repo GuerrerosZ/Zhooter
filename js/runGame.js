@@ -1,9 +1,8 @@
 (function(){
 	session = new Session();
 	level = session.getLevel();
-	alert(level);
 	character = session.getCharacter();
-	character.setHealt(character.getHealt());
+	//character.setHealt(character.getHealt());
 	enemys = [];
 	for (var i = 0; i < 10 * level; i++) {
 		var enemy = new Enemy(1);

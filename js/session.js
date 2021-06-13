@@ -13,7 +13,6 @@ class Session {
 
     static setExtraHealth(extraHealth) {
         sessionStorage.setItem("extraHealth", extraHealth);
-        alert(this.getExtraHealth())
     }
 
     static getExtraHealth() {
