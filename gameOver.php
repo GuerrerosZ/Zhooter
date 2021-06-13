@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon/favicon.png">
+    <script src="js/session.js"></script>
 </head>
 
 <body>
@@ -18,8 +19,16 @@
     </div>
     <div id="flex">
         <div class="infoMuerte">
-            <p id="p1">ENEMIGOS DERROTADOS:</p>
-            <p id="p2">NIVEL ALCANZADO:</p>
+            <p id="p1">ENEMIGOS DERROTADOS:
+                <script type="text/javascript">
+                    document.write(Session.getKilledEnemies());
+                </script>
+            </p>
+            <p id="p2">NIVEL ALCANZADO:
+                <script type="text/javascript">
+                    document.write(Session.getLevel());
+                </script>
+            </p>
         </div>
     </div>
     <div class="pauseContainer">

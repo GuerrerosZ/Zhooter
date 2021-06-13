@@ -17,13 +17,21 @@
     </div>
     <div id="container">
         <div id="d1">
-            <button id="b1" class="button" onclick="Session.setExtraHealth(parseInt(Session.getExtraHealth()) + parseInt(10)); location.href='game.php'" title="Este item aumenta en 10 puntos la vida maxima del personaje"></button>
+            <button 
+                id="b1" 
+                class="button" 
+                onclick="Session.setExtraHealth(parseInt(Session.getExtraHealth()) + parseInt(10));Session.setHealth(100 + parseInt(Session.getExtraHealth())); location.href='game.php'" 
+                title="Este item aumenta en 10 puntos la vida maxima del personaje">                
+            </button>
         </div>
         <div id="d2">
-            <button id="b2" class="button" title="Este item te permitira cambiar tu arma" onclick="location.href='elegirNuevaArma.php'"></button>
+            <button id="b2" class="button" title="Este item te permitira cambiar tu arma" onclick="Session.setPremiumGun(1);location.href='game.php'"></button>
         </div>
         <div id="d3">
-            <button id="b3" class="button" onclick="Session.setSlowMove(1); location.href='game.php'" title="Este item disminuira evitara que la velocidad de los enemigos se vea acelerada en este nivel"></button>
+            <button id="b3" class="button" onclick="Session.setWeakness(1); location.href='game.php'" title="Este item disminuira evitara que la velocidad de los enemigos se vea acelerada en este nivel"></button>
         </div>
-        <a href="game.php">Siguiente nivel</a>
     </div>
+    <script>
+        Session.setPremiumGun(0);
+    </script>
+</body>

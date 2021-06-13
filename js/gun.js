@@ -58,6 +58,10 @@ class Gun {
     getName(){
         return this.name;
     }
+
+    setAmmo(ammo){
+        this.ammo = ammo;
+    }
 }
 //constructor(range, cadency, damage, id, name, maxAmmo, bulletVel)
 //cadency: tiempo entre disparos

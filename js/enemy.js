@@ -3,9 +3,9 @@ class Enemy {
         var data = this.selectEnemy(id);
         this.id = id;
         this.name = data.name;
-        this.healt = data.healt + parseInt(level);
-        this.vel = data.vel + parseInt(level) - parseInt(Session.getSlowMove());
-        this.danio = data.danio + parseInt(level);
+        this.healt = (data.healt + parseInt(level)) - (parseInt(Session.getWeakness()));
+        this.vel = (data.vel + parseInt(level)) - (parseInt(Session.getWeakness()));
+        this.danio = (data.danio + parseInt(level)) - (parseInt(Session.getWeakness()));
         this.attackRange = data.attackRange + parseInt(level);
         this.attackCad = data.attackCad;
         this.control = new EnemyControl(this);
@@ -23,6 +23,7 @@ class Enemy {
         this.healt = healt;
         if (this.healt <= 0) {
             this.control.kill();
+            Session.setKilledEnemies(Session.getKilledEnemies()+1);
             var aux = [];
             for (var i = 0; i < enemys.length; i++) {
                 if (enemys[i] !== this) {

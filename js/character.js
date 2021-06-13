@@ -39,6 +39,8 @@ class Character extends Observable {
         this.yPos;
         this.statsControl = new StatsControl();
         this.updateStats();
+        Session.setGun(this.weaponActual.getName());
+        this.setPremiumGun();
     }
 
     setHealt(healt) {
@@ -124,8 +126,16 @@ class Character extends Observable {
         } else {
             this.weaponActual = this.primaryWeapon;
         }
+        Session.setGun(this.weaponActual.getName());
         this.updateStats();
     }
+
+    setPremiumGun(){
+        if (parseInt(Session.getPremiumGun())) {
+            this.defaultWeapon = new Rifle();
+            this.defaultWeapon.setAmmo(Number.POSITIVE_INFINITY);
+        }
+    };
 }
 
 //Creacion de Armas

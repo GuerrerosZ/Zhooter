@@ -26,7 +26,7 @@ class Control {
             case 80: //pausa
                 pause();
                 break
-            case 69: //pausa
+            case 32: //change gun
                 changeGun();
                 break
         }
@@ -70,8 +70,8 @@ class Control {
         }
 
         function pause() {
-            window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");
-            //pausar juego, hasta que se cierre la ventana emergente
+            Session.setHealth(character.getHealt());
+            window.location.replace("pause.php", "PAUSA", "width=220,height=140,top=300,left=700,scrollbars=NO,titlebar=YES");    
         }
 
         function changeGun() {
@@ -157,7 +157,6 @@ class StatsControl {
     constructor() {
         this.healt = document.createElement('div');
         this.healt.setAttribute('class', 'stat');
-        this.healt.innerHTML = 100;
         this.ammo = document.createElement('div');
         this.ammo.setAttribute('class', 'stat');
         this.stats = document.getElementById('stats')

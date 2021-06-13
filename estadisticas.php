@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon/favicon.png">
+    <script src="js/session.js"></script>
 </head>
 
 <body>
@@ -18,10 +19,30 @@
     </div>
     <div id="flex">
         <div class="info">
-            <p id="p1">ENEMIGOS DERROTADOS:</p>
-            <p id="p2">NIVEL ACTUAL:</p>
-            <p id="p3">VIDA ACTUAL:</p>
-            <p id="p4">ARMA:</p>
+            <p id="p1">
+                ENEMIGOS DERROTADOS:
+                <script type="text/javascript">
+                    document.write(Session.getKilledEnemies());
+                </script>
+            </p>
+            <p id="p2">
+                NIVEL ACTUAL:
+                <script type="text/javascript">
+                    document.write(Session.getLevel());
+                </script>
+            </p>
+            <p id="p3">
+                VIDA ACTUAL: 
+                <script type="text/javascript">
+                    document.write(Session.getHealth());
+                </script>
+            </p>
+            <p id="p4">
+                ARMA:
+                <script type="text/javascript">
+                    document.write(Session.getGun());
+                </script>
+            </p>
         </div>
     </div>
     <div class="pauseContainer">

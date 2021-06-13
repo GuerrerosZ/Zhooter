@@ -2,8 +2,11 @@
     var session = new Session();
 
     Session.setExtraHealth(0);
-    Session.setSlowMove(0);
-    session.setLevel(1);
+    Session.setWeakness(0);
+    Session.setKilledEnemies(0);
+    Session.setPremiumGun(0);
+    Session.setHealth(100);
+    Session.setLevel(1);
     characters = document.getElementsByClassName('character');
     for (var i = 0; i < characters.length; i++) {
         characters[i].addEventListener('click', function() {

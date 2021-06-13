@@ -15,7 +15,7 @@
     </div>
     <div class="pauseContainer">
         <div>
-            <button class="button" onclick="location.href='select.php'">SELECCIONAR PERSONAJE</button>
+            <button class="button" onclick="location.href='select.php'">JUGAR</button>
         </div>
     </div>
 </body>
