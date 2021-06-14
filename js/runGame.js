@@ -10,7 +10,7 @@
         enemys.push(enemy);
     }
 
-    setInterval(runEnemy, 500);
+    interval_attack = setInterval(runEnemy, 500);
 
     function runEnemy() {
         if (enemys.length == 0) {
