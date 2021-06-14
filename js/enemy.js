@@ -114,3 +114,4 @@ var esquelo = {
     "attackRange": 100,
     "attackCad": 0.5,
 };
+

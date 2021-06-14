@@ -71,3 +71,5 @@ class Session {
         return (sessionStorage.getItem("premiumGun"));
     }
 }
+
+module.exports = Session;

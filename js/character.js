@@ -141,7 +141,7 @@ class Character extends Observable {
 //Creacion de Armas
 var ak = new Ak(),
     shotgun = new Shotgun()
-rifle = new Rifle(),
+    rifle = new Rifle(),
     revolver = new Revolver(),
     secondary = new Default();
 
