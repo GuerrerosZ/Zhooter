@@ -1,0 +1,22 @@
+{
+  "name": "jest-test",
+  "version": "1.0.0",
+  "description": "unit test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jest",
+    "testing"
+  ],
+  "author": "guerreros z",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.4",
+    "mock-local-storage": "^1.1.17"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "mock-local-storage"
+  }
+}

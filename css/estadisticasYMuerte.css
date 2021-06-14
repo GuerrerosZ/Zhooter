@@ -1,0 +1,108 @@
+body {
+    background-color: black;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    color: violet;
+    font-size: 90px;
+}
+
+.pauseContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pauseContainer div {
+    padding-top: 20px;
+}
+
+#bVolver {
+    border-radius: 15px;
+    width: 200px;
+    height: 80px;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 40px;
+    background-image: url("../img/pausa/BF.png");
+    cursor: pointer;
+}
+
+#reinicio {
+    border-radius: 15px;
+    width: 400px;
+    height: 80px;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 40px;
+    background-image: url("../img/pausa/BF.png");
+    cursor: pointer;
+}
+
+p {
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+#flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.info {
+    display: grid;
+    grid-template-areas: "p1 d1" "p2 d2" "p3 d3" "p4 d4";
+    border: 1px white solid;
+    justify-self: center;
+    width: 400px;
+}
+
+.infoMuerte {
+    display: grid;
+    grid-template-areas: "p1 d1" "p2 d2";
+    border: 1px white solid;
+    justify-self: center;
+    width: 400px;
+}
+
+#p1 {
+    grid-area: p1;
+}
+
+#p2 {
+    grid-area: p2;
+}
+
+#p3 {
+    grid-area: p3;
+}
+
+#p4 {
+    grid-area: p4;
+}
+
+#d1 {
+    grid-area: d1;
+}
+
+#d2 {
+    grid-area: d2;
+}
+
+#d3 {
+    grid-area: d3;
+}
+
+#d4 {
+    grid-area: d4;
+}
