@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${browser}  headlessfirefox
-${pagina}  http://localhost/
+${pagina}  http://localhost/Zhooter
 
 *** Test Cases ***
 TR1_2
@@ -36,8 +36,8 @@ TR1_3
 TR1_4
     Ejecutar juego
     Press Keys    none    P
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/pause.php
+    Sleep  1s
+    Title Should Be  Pausa
     Cerrar navegador
 
 TR1_5
@@ -59,26 +59,15 @@ TR2_1
 
 TR2_2
     Open browser    ${pagina}   ${browser}
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/
     Click Element   class:button
     Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/select.php
+    Title Should Be  Seleccionar Personaje
     Cerrar navegador
 
 TR2_3
-    Open browser    ${pagina}   ${browser}
-    Click Element   class:button
-    Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/select.php
-    Execute JavaScript   document.getElementsByClassName('character')[1].click()
-    Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/game.php
-    ${character_id}=  Execute JavaScript  return character.getId();
-    Should Be Equal As Strings    ${character_id}    2
+    Ejecutar Juego
+    ${character}=   Execute JavaScript   return session.getCharacter().id;
+    Should Be Equal  ${character}  1
     Cerrar navegador
 
 TR2_4
@@ -97,27 +86,7 @@ TR2_5
 
 TR2_6
     Ejecutar juego
-    Press Keys    none    P
-    Sleep   1s
-    Execute JavaScript   document.getElementsByClassName('button')[0].click()
-    Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/game.php
-    Sleep   1s
-    Press Keys    none    P
-    Sleep   1s
-    Execute JavaScript   document.getElementsByClassName('button')[1].click()
-    Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/estadisticas.php
-    Sleep   1s
-    Click Element   id:bVolver
-    Sleep   1s
-    Execute JavaScript   document.getElementsByClassName('button')[2].click()
-    Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/index.php
-    Sleep   1s
+    Pausa
     Cerrar navegador
 
 TR2_7
@@ -139,7 +108,7 @@ TR3_1
 TR3_2
     Ejecutar juego
     Frenar zombis
-    ${width} 	${height}= 	Get Window Size
+    ${width}    ${height}=  Get Window Size
     ${maxenemys}=   Execute JavaScript   return enemys.length
     ${i}=   Set Variable   ${0}
     FOR   ${i}   IN RANGE   ${maxenemys}
@@ -156,8 +125,6 @@ TR3_2
     END
     Cerrar navegador
 
-
-
 TR3_3
     Ejecutar juego
     ${charPos}=   Execute JavaScript   return character.getX()
@@ -169,13 +136,11 @@ TR3_3
     Should Not Be Equal   ${dist1}   ${dist2}
     Cerrar navegador
 
-
 TR3_5
     Ejecutar juego
     Pasar de nivel
     Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal   ${page}   http://localhost/tienda.php
+    Title Should Be  Tienda de Zhooter
     Cerrar navegador
 
 TR3_6
@@ -183,8 +148,7 @@ TR3_6
     Frenar zombis
     Execute JavaScript    character.setHealt(0)
     Sleep   1s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal   ${page}   http://localhost/gameOver.php
+    Title Should Be  Game Over
     Cerrar navegador
 
 TR3_7
@@ -266,8 +230,7 @@ TI_001
 TI_002
     Ejecutar juego
     Sleep    15s
-    ${page}=   Execute JavaScript   return window.location.href
-    Should Be Equal As Strings    ${page}    http://localhost/gameOver.php
+    Title Should Be  Game Over
     Cerrar navegador
 
 TI_003
@@ -342,6 +305,21 @@ Recorrer vistas
     Execute JavaScript   character.setHealt(0)
     Sleep   1s
     Click Element   id:reinicio
+    Sleep   1s
+    Title Should Be  Menu
+
+Pausa
+    Press Keys    none    P
+    Sleep   1s
+    Execute JavaScript   document.getElementsByClassName('button')[1].click()
+    Sleep   1s
+    Click Element   id:bVolver
+    Sleep   1s
+    Execute JavaScript   document.getElementsByClassName('button')[0].click()
+    Sleep   1s
+    Press Keys    none    P
+    Sleep   1s
+    Execute JavaScript   document.getElementsByClassName('button')[2].click()
     Sleep   1s
     Title Should Be  Menu
 
