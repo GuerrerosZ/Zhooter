@@ -1,0 +1,101 @@
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    color: violet;
+    font-size: 100px;
+}
+
+.button {
+    border-radius: 10px;
+    background-color: gray;
+    height: 204px;
+    width: 240px;
+    cursor: pointer;
+}
+
+#b1 {
+    background-image: url("../img/tienda/botonDeVida.png");
+}
+
+#b2 {
+    background-image: url("../img/tienda/botonDeArmas.png");
+}
+
+#b3 {
+    background-image: url("../img/tienda/botonEnemySlow.png");
+}
+
+#d1 {
+    padding-left: 150px;
+}
+
+#d2 {
+    padding-left: 160px;
+}
+
+#d3 {
+    padding-left: 160px;
+}
+
+#b4 {
+    background-image: url("../img/tienda/PB.png");
+}
+
+#b5 {
+    background-image: url("../img/tienda/AB.png");
+}
+
+#b6 {
+    background-image: url("../img/tienda/SB.png");
+}
+
+#b7 {
+    background-image: url("../img/tienda/RB.png");
+}
+
+#d4 {
+    padding-left: 75px;
+}
+
+#d5 {
+    padding-left: 75px;
+}
+
+#d6 {
+    padding-left: 75px;
+}
+
+#d7 {
+    padding-left: 75px;
+}
+
+.container img {
+    width: 10%;
+}
+
+#gif1 {
+    padding-left: 200px;
+}
+
+#gif2 {
+    padding-left: 270px;
+}
+
+#gif3 {
+    padding-left: 270px;
+}

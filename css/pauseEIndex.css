@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    color: violet;
+    font-size: 100px;
+}
+
+.pauseContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button {
+    border-radius: 15px;
+    width: 400px;
+    height: 80px;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 40px;
+    background-image: url("../img/pausa/BF.png");
+    cursor: pointer;
+}
+
+.pauseContainer div div {
+    padding-bottom: 50px;
+}

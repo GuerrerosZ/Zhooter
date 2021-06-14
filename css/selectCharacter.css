@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: white;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 25vw;
+    height: 100vh;
+    overflow: visible;
+    padding: 1vw;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 24, 71);
+    background: radial-gradient(circle, rgba(0, 24, 71, 1) 0%, rgba(1, 8, 27, 1) 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+img.character {
+    bottom: 0;
+    position: absolute;
+    opacity: 0.7;
+}
+
+img.character:hover {
+    opacity: 1;
+}
+
+div#santos {
+    z-index: 4;
+}
+
+div#santos img {
+    width: 40vw;
+    right: -24vw;
+}
+
+div#ravenna img {
+    width: 15vw;
+    right: 0.5vw;
+    bottom: 23.5vw;
+    z-index: 5;
+}
+
+div#lampone img {
+    width: 19vw;
+    left: -7vw;
+    z-index: 4;
+}
+
+div#medina img {
+    width: 30vw;
+    left: -23vw;
+}
